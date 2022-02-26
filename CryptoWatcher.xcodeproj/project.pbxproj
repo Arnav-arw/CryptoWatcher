@@ -11,6 +11,8 @@
 		6A9CC85D27C7F75B00D4617B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9CC85C27C7F75B00D4617B /* ContentView.swift */; };
 		6A9CC85F27C7F75C00D4617B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9CC85E27C7F75C00D4617B /* Assets.xcassets */; };
 		6A9CC86227C7F75C00D4617B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9CC86127C7F75C00D4617B /* Preview Assets.xcassets */; };
+		6AAD456627CAA24100734594 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD456527CAA24100734594 /* AppDelegate.swift */; };
+		6AAD456A27CAA60F00734594 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD456927CAA60F00734594 /* MenuBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,9 @@
 		6A9CC85E27C7F75C00D4617B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A9CC86127C7F75C00D4617B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6A9CC86327C7F75C00D4617B /* CryptoWatcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoWatcher.entitlements; sourceTree = "<group>"; };
+		6AAD456427CAA17F00734594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6AAD456527CAA24100734594 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6AAD456927CAA60F00734594 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				6A9CC85A27C7F75B00D4617B /* CryptoWatcherApp.swift */,
+				6AAD456527CAA24100734594 /* AppDelegate.swift */,
 				6A9CC85C27C7F75B00D4617B /* ContentView.swift */,
+				6AAD456927CAA60F00734594 /* MenuBarView.swift */,
+				6AAD456427CAA17F00734594 /* Info.plist */,
 				6A9CC85E27C7F75C00D4617B /* Assets.xcassets */,
 				6A9CC86327C7F75C00D4617B /* CryptoWatcher.entitlements */,
 				6A9CC86027C7F75C00D4617B /* Preview Content */,
@@ -139,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AAD456627CAA24100734594 /* AppDelegate.swift in Sources */,
+				6AAD456A27CAA60F00734594 /* MenuBarView.swift in Sources */,
 				6A9CC85D27C7F75B00D4617B /* ContentView.swift in Sources */,
 				6A9CC85B27C7F75B00D4617B /* CryptoWatcherApp.swift in Sources */,
 			);
@@ -274,6 +284,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoWatcher/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +312,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoWatcher/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
