@@ -12,6 +12,7 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var statusItem: NSStatusItem!
+    let popover = NSPopover()
     
     private lazy var contentView: NSView? = {
         let view = (statusItem.value(forKey: "window") as? NSWindow)?.contentView
@@ -20,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         setUpMenuBar()
+        setUpPopover()
     }
 }
 
@@ -42,5 +44,32 @@ extension AppDelegate {
             customView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             customView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        menuButton.action = #selector(menuButtonClicked)
+    }
+    
+    @objc func menuButtonClicked() {
+        if popover.isShown {
+            popover.performClose(nil)
+            return
+        }
+        guard let menuButton = statusItem.button
+        else { return }
+        
+        popover.show(relativeTo: menuButton.bounds, of: menuButton, preferredEdge: .maxY)
+        popover.contentViewController?.view.window?.makeKey()
+    }
+}
+
+extension AppDelegate {
+    func setUpPopover() {
+        popover.behavior = .transient
+        popover.animates = true
+        popover.contentSize = .init(width: 240, height: 280)
+        popover.contentViewController = NSViewController()
+        popover.contentViewController?.view = NSHostingView(
+            rootView: PopoverView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding()
+        )
     }
 }
