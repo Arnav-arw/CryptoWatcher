@@ -11,6 +11,7 @@ import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    let coinCapAPI = CoinCapAPI()
     var statusItem: NSStatusItem!
     let popover = NSPopover()
     
@@ -20,8 +21,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        setUpCoinCapAPI()
         setUpMenuBar()
         setUpPopover()
+    }
+    
+    func setUpCoinCapAPI() {
+        coinCapAPI.connect()
     }
 }
 

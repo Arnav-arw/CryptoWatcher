@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct coin {
+struct Coin {
     let name: String
     let value: Double
 }
