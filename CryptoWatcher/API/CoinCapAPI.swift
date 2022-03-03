@@ -30,6 +30,7 @@ class CoinCapAPI: NSObject, URLSessionTaskDelegate {
         wsTask?.delegate = self
         wsTask?.resume()
         self.receiveMessage()
+        self.sendPing() 
     }
     
     private func receiveMessage() {
@@ -68,6 +69,32 @@ class CoinCapAPI: NSObject, URLSessionTaskDelegate {
         }
         let mergedDict = coinDictionary.merging(newDict) { $1 }
         coinSubject.send(mergedDict)
+    }
+    
+    func sendPing() {
+        let identifier = self.wsTask?.taskIdentifier ?? -1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30) { [weak self] in
+            guard let self = self, let task = self.wsTask, task.taskIdentifier == identifier
+            else {
+                return
+            }
+            if task.state == .running {
+                print("PING SENT")
+                task.sendPing { error in
+                    if let error = error {
+                        print("PING FAILED, error is: ", error.localizedDescription)
+                    }
+                }
+                self.sendPing()
+            } else {
+                self.reconnect()
+            }
+        }
+    }
+    
+    private func reconnect() {
+        self.clearTask()
+        self.connect()
     }
     
     func clearTask() {
