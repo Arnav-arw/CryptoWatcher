@@ -69,6 +69,13 @@ class CoinCapAPI: NSObject, URLSessionTaskDelegate {
         let mergedDict = coinDictionary.merging(newDict) { $1 }
         coinSubject.send(mergedDict)
     }
+    
+    func clearTask() {
+        self.wsTask?.cancel()
+        self.wsTask = nil
+        self.connectionStateSubject.send(false)
+    }
+    
     deinit {
         coinSubject.send(completion: .finished)
         connectionStateSubject.send(completion: .finished)
@@ -78,10 +85,11 @@ class CoinCapAPI: NSObject, URLSessionTaskDelegate {
 extension CoinCapAPI: URLSessionWebSocketDelegate {
     
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
-        
+        self.connectionStateSubject.send(true)
     }
     
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
-        
+        self.connectionStateSubject.send(false)
+        print("DISCONECTED")
     }
 }
