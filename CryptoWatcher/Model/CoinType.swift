@@ -10,22 +10,15 @@ import Foundation
 enum CoinType: String, Identifiable, CaseIterable {
     
     case bitcoin
-    case etherium
+    case ethereum
     case solana
     case dogecoin
-    case shibainu
     
     var text: String {
-        if self == .shibainu {
-            return "Shibu Ina"
-        }
         return rawValue.capitalized
     }
     
     var urlText: String {
-        if self == .shibainu {
-            return "shiba-inu"
-        }
         return rawValue
     }
     

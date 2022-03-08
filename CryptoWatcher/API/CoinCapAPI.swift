@@ -8,9 +8,8 @@
 import Combine
 import Foundation
 import Network
-import SwiftUI
 
-class CoinCapAPI: NSObject, URLSessionTaskDelegate {
+class CoinCapAPI: NSObject {
     
     private let session = URLSession(configuration: .default)
     private var wsTask: URLSessionWebSocketTask?
@@ -18,7 +17,7 @@ class CoinCapAPI: NSObject, URLSessionTaskDelegate {
     let coinSubject = CurrentValueSubject<[String: Coin], Never> ([:])
     var coinDictionary: [String: Coin] { coinSubject.value }
     
-    var connectionStateSubject = CurrentValueSubject<Bool, Never> (false)
+    let connectionStateSubject = CurrentValueSubject<Bool, Never>(false)
     var isConnected: Bool { connectionStateSubject.value }
     
     func connect() {
@@ -26,6 +25,7 @@ class CoinCapAPI: NSObject, URLSessionTaskDelegate {
             .map{ $0.urlText }
             .joined(separator: ",")
         let url = URL(string: "wss://ws.coincap.io/prices?assets=\(coins)")!
+        print(url)
         wsTask = session.webSocketTask(with: url)
         wsTask?.delegate = self
         wsTask?.resume()
@@ -117,6 +117,5 @@ extension CoinCapAPI: URLSessionWebSocketDelegate {
     
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
         self.connectionStateSubject.send(false)
-        print("DISCONECTED")
     }
 }

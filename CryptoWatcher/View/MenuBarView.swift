@@ -16,9 +16,13 @@ struct MenuBarView: View {
             VStack(alignment: .trailing, spacing: -2) {
                 Text(viewModel.name)
                 Text(viewModel.value)
+                    .foregroundColor(viewModel.color)
             }
             .font(.caption)
         }
+        .onChange(of: viewModel.selectedCoin, perform: { newValue in
+            viewModel.updateView()
+        })
         .onAppear {
             viewModel.subToService()
         }

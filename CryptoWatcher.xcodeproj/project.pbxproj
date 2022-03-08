@@ -11,7 +11,8 @@
 		6A2A782327CCB58E00AB2515 /* CoinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2A782227CCB58E00AB2515 /* CoinType.swift */; };
 		6A2A782527CCB88F00AB2515 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2A782427CCB88F00AB2515 /* Coin.swift */; };
 		6A2A782827CCB97D00AB2515 /* CoinCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2A782727CCB97D00AB2515 /* CoinCapAPI.swift */; };
-		6A4FA5A727D7A85000043467 /* CoinViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FA5A627D7A85000043467 /* CoinViewmodel.swift */; };
+		6A4FA5A727D7A85000043467 /* CoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FA5A627D7A85000043467 /* CoinViewModel.swift */; };
+		6A4FA5A927D7B82700043467 /* PopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FA5A827D7B82700043467 /* PopoverViewModel.swift */; };
 		6A9CC85B27C7F75B00D4617B /* CryptoWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9CC85A27C7F75B00D4617B /* CryptoWatcherApp.swift */; };
 		6A9CC85F27C7F75C00D4617B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9CC85E27C7F75C00D4617B /* Assets.xcassets */; };
 		6A9CC86227C7F75C00D4617B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9CC86127C7F75C00D4617B /* Preview Assets.xcassets */; };
@@ -24,7 +25,8 @@
 		6A2A782227CCB58E00AB2515 /* CoinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinType.swift; sourceTree = "<group>"; };
 		6A2A782427CCB88F00AB2515 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		6A2A782727CCB97D00AB2515 /* CoinCapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCapAPI.swift; sourceTree = "<group>"; };
-		6A4FA5A627D7A85000043467 /* CoinViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewmodel.swift; sourceTree = "<group>"; };
+		6A4FA5A627D7A85000043467 /* CoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModel.swift; sourceTree = "<group>"; };
+		6A4FA5A827D7B82700043467 /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
 		6A9CC85727C7F75B00D4617B /* CryptoWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9CC85A27C7F75B00D4617B /* CryptoWatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoWatcherApp.swift; sourceTree = "<group>"; };
 		6A9CC85E27C7F75C00D4617B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +77,8 @@
 		6A4FA5A527D7A83800043467 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6A4FA5A627D7A85000043467 /* CoinViewmodel.swift */,
+				6A4FA5A627D7A85000043467 /* CoinViewModel.swift */,
+				6A4FA5A827D7B82700043467 /* PopoverViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,9 +197,10 @@
 				6A2A782527CCB88F00AB2515 /* Coin.swift in Sources */,
 				6AAD456627CAA24100734594 /* AppDelegate.swift in Sources */,
 				6AAD456A27CAA60F00734594 /* MenuBarView.swift in Sources */,
-				6A4FA5A727D7A85000043467 /* CoinViewmodel.swift in Sources */,
+				6A4FA5A727D7A85000043467 /* CoinViewModel.swift in Sources */,
 				6A2A781E27CCB13F00AB2515 /* PopoverView.swift in Sources */,
 				6A2A782327CCB58E00AB2515 /* CoinType.swift in Sources */,
+				6A4FA5A927D7B82700043467 /* PopoverViewModel.swift in Sources */,
 				6A9CC85B27C7F75B00D4617B /* CryptoWatcherApp.swift in Sources */,
 				6A2A782827CCB97D00AB2515 /* CoinCapAPI.swift in Sources */,
 			);
@@ -333,6 +337,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryptoWatcher/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -361,6 +366,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryptoWatcher/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
