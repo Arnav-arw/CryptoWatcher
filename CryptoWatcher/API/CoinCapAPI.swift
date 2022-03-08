@@ -15,11 +15,11 @@ class CoinCapAPI: NSObject, URLSessionTaskDelegate {
     private let session = URLSession(configuration: .default)
     private var wsTask: URLSessionWebSocketTask?
     
-    private let coinSubject = CurrentValueSubject<[String: Coin], Never> ([:])
-    private var coinDictionary: [String: Coin] { coinSubject.value }
+    let coinSubject = CurrentValueSubject<[String: Coin], Never> ([:])
+    var coinDictionary: [String: Coin] { coinSubject.value }
     
-    private var connectionStateSubject = CurrentValueSubject<Bool, Never> (false)
-    private var isConnected: Bool { connectionStateSubject.value }
+    var connectionStateSubject = CurrentValueSubject<Bool, Never> (false)
+    var isConnected: Bool { connectionStateSubject.value }
     
     func connect() {
         let coins = CoinType.allCases
