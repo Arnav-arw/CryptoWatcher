@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct MenuBarView: View {
+    
+    @ObservedObject var viewModel: CoinViewModel
+    
     var body: some View {
         HStack(spacing: 4) {
-            Image(systemName: "bitcoinsign.circle")
-            
             VStack(alignment: .trailing, spacing: -2) {
-                Text("Bitcoin")
-                Text("$35,000")
+                Text(viewModel.name)
+                Text(viewModel.value)
             }
             .font(.caption)
+        }
+        .onAppear {
+            viewModel.subToService()
         }
     }
 }
 
 struct MenuBarView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuBarView()
+        MenuBarView(viewModel: .init(name: "Bitcoin", value: "40,000", color: .green))
     }
 }
