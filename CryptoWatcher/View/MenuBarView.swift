@@ -15,6 +15,7 @@ struct MenuBarView: View {
         HStack(spacing: 4) {
             VStack(alignment: .trailing, spacing: -2) {
                 Text(viewModel.name)
+                    .fontWeight(.bold)
                 Text(viewModel.value)
                     .foregroundColor(viewModel.color)
             }

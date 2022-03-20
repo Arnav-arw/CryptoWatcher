@@ -83,6 +83,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6A4FA5AA27D7CAF100043467 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		6A9CC84E27C7F75A00D4617B = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +118,7 @@
 				6AAD456427CAA17F00734594 /* Info.plist */,
 				6A9CC85E27C7F75C00D4617B /* Assets.xcassets */,
 				6A9CC86327C7F75C00D4617B /* CryptoWatcher.entitlements */,
+				6A4FA5AA27D7CAF100043467 /* Product */,
 				6A9CC86027C7F75C00D4617B /* Preview Content */,
 			);
 			path = CryptoWatcher;

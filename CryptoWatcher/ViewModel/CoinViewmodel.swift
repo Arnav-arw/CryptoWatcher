@@ -56,6 +56,6 @@ class CoinViewModel: ObservableObject {
         } else {
             self.value = "Offline"
         }
-        self.color = self.service.isConnected ? .white : .red
+        self.color = self.service.isConnected ? .black : .red
     }
 }
